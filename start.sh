@@ -40,7 +40,7 @@ while IFS= read -r proxy || [ -n "$proxy" ]; do
     # echo "bind port: $bind_port"
 
     # Call the proxypipe program with the extracted arguments and incrementing bind port
-    ./proxypipe -t "$host:$port" -u "$user" -p "$password" -b "127.0.0.1:$bind_port" -type "$proxy_type" &
+    ./proxypipe -t "$host:$port" -u "$user" -p "$password" -b "0.0.0.0:$bind_port" -type "$proxy_type" &
 
     # Increment bind port value for the next call
     bind_port=$((bind_port + 1))
