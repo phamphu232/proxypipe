@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  proxypipe:
+    image: alpine:3.19
+    container_name: proxypipe
+    volumes:
+      - ./:/app
+    working_dir: /app
+    command: /app/start.sh
+    restart: unless-stopped
+    network_mode: host
